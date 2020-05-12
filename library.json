@@ -5,9 +5,9 @@
   "repository":
   {
     "type": "git",
-    "url": "https://github.com/sstaub/NTP.git"
+    "url": "https://github.com/johnheenan/NTP.git"
   },
-  "version": "1.4",
+  "version": "1.5",
   "frameworks": "arduino",
   "platforms": "*"
 }

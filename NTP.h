@@ -20,6 +20,8 @@
  * SOFTWARE.
  */
 
+// Additions by John Heenan, 2020, as is and with no warranty. Please retain line.
+
 #ifndef NTP_H
 #define NTP_H
 
@@ -40,6 +42,8 @@
 enum week_t {Last, First, Second, Third, Fourth}; 
 enum dow_t {Sun, Mon, Tue, Wed, Thu, Fri, Sat};
 enum month_t {Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec};
+
+class NTP2;
 
 class NTP {
   public:
@@ -254,7 +258,7 @@ class NTP {
     int16_t dstOffset = 0;
     bool dstZone = true;
     uint32_t utcTime = 0;
-    int32_t diffTime;    
+    int32_t diffTime = 0;    
     time_t utcSTD, utcDST;
     time_t dstTime, stdTime;
     uint16_t yearDST;
@@ -273,6 +277,7 @@ class NTP {
     void beginDST();
     time_t calcDateDST(struct ruleDST rule, int year);
     bool summerTime();
+    friend class NTP2;
    
 };
 
