@@ -68,6 +68,17 @@ class NTP {
     void begin(bool blocking = true);
 
     /**
+     * @brief starts the underlying UDP client with the default local port with a timeout in ms
+     * 
+     * @param timeout for update
+     * @param complete false to abandon changes if update failed
+     *
+     * @return true on update success
+     * @return false on no update or update failure
+     */
+    bool begin(uint32_t timeout, bool complete);
+
+    /**
      * @brief stops the underlying UDP client
      * 
      */
